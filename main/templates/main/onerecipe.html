@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <p>LOL</p>
+    <h1>{{ recipes.name }}</h1>
+
+    <img src="{{ recipes.recipe_image.url }}" width="350px" height="250px">
+
+    <p>{{ recipes.desc }}</p>
+
+{% endblock %}

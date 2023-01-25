@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+
+
+
+
+{% block content %}
+<html>
+    <head>
+        <style>
+            .column {
+            float: left;
+            width: 33.33%;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        {% for recipe in recipes %}
+        {% load static %}
+            <div class="column">
+                <a href="{% url 'one_recipe' recipe.id %}"><img src="{{ recipe.recipe_image.url }}" width="350px" height="250px"></a><br>
+                <p>{{ recipe.name }}</p><br>
+                <p>{{ recipe.desc }}</p><br>
+            </div>
+          {% endfor %}
+    </body>
+</html>
+{% endblock %}
